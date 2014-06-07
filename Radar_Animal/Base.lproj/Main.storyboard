@@ -95,10 +95,10 @@
             </objects>
             <point key="canvasLocation" x="-194" y="-6"/>
         </scene>
-        <!--View Controller - Mapa-->
+        <!--MapsVC - Mapa-->
         <scene sceneID="qc4-on-svx">
             <objects>
-                <viewController id="OwQ-aQ-4Ei" sceneMemberID="viewController">
+                <viewController id="OwQ-aQ-4Ei" customClass="MapsVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vb4-sA-tow"/>
                         <viewControllerLayoutGuide type="bottom" id="iaL-yE-jYg"/>
@@ -106,6 +106,12 @@
                     <view key="view" contentMode="scaleToFill" id="LJQ-BF-H2u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1Zn-qg-D0z">
+                                <rect key="frame" x="0.0" y="51" width="320" height="445"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mapa" id="X4s-Bz-8X4"/>
@@ -114,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="566" y="344"/>
         </scene>
-        <!--View Controller - Mural-->
+        <!--Cute WallVC - Mural-->
         <scene sceneID="TjD-be-AAt">
             <objects>
-                <viewController id="t8M-7Y-Sbz" sceneMemberID="viewController">
+                <viewController id="t8M-7Y-Sbz" customClass="CuteWallVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XHG-Te-f3m"/>
                         <viewControllerLayoutGuide type="bottom" id="Gzl-Oj-ned"/>
@@ -125,9 +131,56 @@
                     <view key="view" contentMode="scaleToFill" id="QqS-gB-Ksa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hmi-DC-dKM">
+                                <rect key="frame" x="0.0" y="102" width="320" height="364"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aoU-b8-jbL">
+                                    <size key="itemSize" width="270" height="166"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cuteCell" id="ra6-yl-OqO" customClass="CuteCell">
+                                        <rect key="frame" x="25" y="0.0" width="270" height="166"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="270" height="166"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gjt-cL-CL1">
+                                                    <rect key="frame" x="0.0" y="7" width="270" height="123"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXH-gk-v8E">
+                                                    <rect key="frame" x="5" y="138" width="270" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="imageView" destination="Gjt-cL-CL1" id="hg4-qT-agh"/>
+                                            <outlet property="textLabel" destination="UXH-gk-v8E" id="Aov-br-swy"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="t8M-7Y-Sbz" id="EZT-yY-aHX"/>
+                                    <outlet property="delegate" destination="t8M-7Y-Sbz" id="xsx-ib-tI4"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mural" id="iZM-p0-Ioy"/>
+                    <connections>
+                        <outlet property="collectionView" destination="hmi-DC-dKM" id="v0A-9l-oUs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="beP-gc-gvG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

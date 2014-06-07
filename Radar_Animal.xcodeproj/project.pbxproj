@@ -25,6 +25,10 @@
 		C7DA91BF1942C1CA00691B10 /* NewsFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DA91BE1942C1CA00691B10 /* NewsFeedCell.m */; };
 		C7DA91C11942C98900691B10 /* newsfeeds.json in Resources */ = {isa = PBXBuildFile; fileRef = C7DA91C01942C98900691B10 /* newsfeeds.json */; };
 		C7DA91C41942C9E900691B10 /* Server.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DA91C31942C9E900691B10 /* Server.m */; };
+		C7DA91CA1942D44A00691B10 /* CuteWallVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DA91C91942D44A00691B10 /* CuteWallVC.m */; };
+		C7DA91CD1942D57700691B10 /* CuteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DA91CC1942D57700691B10 /* CuteCell.m */; };
+		C7DA91CF1942D86400691B10 /* cutes.json in Resources */ = {isa = PBXBuildFile; fileRef = C7DA91CE1942D86400691B10 /* cutes.json */; };
+		C7DA91D21942D9F600691B10 /* MapsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DA91D11942D9F600691B10 /* MapsVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,13 @@
 		C7DA91C01942C98900691B10 /* newsfeeds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newsfeeds.json; sourceTree = "<group>"; };
 		C7DA91C21942C9E900691B10 /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
 		C7DA91C31942C9E900691B10 /* Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Server.m; sourceTree = "<group>"; };
+		C7DA91C81942D44A00691B10 /* CuteWallVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CuteWallVC.h; sourceTree = "<group>"; };
+		C7DA91C91942D44A00691B10 /* CuteWallVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CuteWallVC.m; sourceTree = "<group>"; };
+		C7DA91CB1942D57700691B10 /* CuteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CuteCell.h; sourceTree = "<group>"; };
+		C7DA91CC1942D57700691B10 /* CuteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CuteCell.m; sourceTree = "<group>"; };
+		C7DA91CE1942D86400691B10 /* cutes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cutes.json; sourceTree = "<group>"; };
+		C7DA91D01942D9F600691B10 /* MapsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapsVC.h; sourceTree = "<group>"; };
+		C7DA91D11942D9F600691B10 /* MapsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapsVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +149,7 @@
 			children = (
 				C71D8BF21942B62200BEABC2 /* AppDelegate.h */,
 				C71D8BF31942B62200BEABC2 /* AppDelegate.m */,
+				C7DA91CE1942D86400691B10 /* cutes.json */,
 				C7DA91C01942C98900691B10 /* newsfeeds.json */,
 				C71D8BEB1942B62200BEABC2 /* Radar_Animal-Info.plist */,
 				C71D8BEC1942B62200BEABC2 /* InfoPlist.strings */,
@@ -180,6 +192,8 @@
 				C71D8BF51942B62200BEABC2 /* Main.storyboard */,
 				C7DA91BD1942C1CA00691B10 /* NewsFeedCell.h */,
 				C7DA91BE1942C1CA00691B10 /* NewsFeedCell.m */,
+				C7DA91CB1942D57700691B10 /* CuteCell.h */,
+				C7DA91CC1942D57700691B10 /* CuteCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -189,6 +203,10 @@
 			children = (
 				C7DA91BA1942BFF100691B10 /* HomeVC.h */,
 				C7DA91BB1942BFF100691B10 /* HomeVC.m */,
+				C7DA91C81942D44A00691B10 /* CuteWallVC.h */,
+				C7DA91C91942D44A00691B10 /* CuteWallVC.m */,
+				C7DA91D01942D9F600691B10 /* MapsVC.h */,
+				C7DA91D11942D9F600691B10 /* MapsVC.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -270,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C71D8BFC1942B62200BEABC2 /* Images.xcassets in Resources */,
+				C7DA91CF1942D86400691B10 /* cutes.json in Resources */,
 				C71D8BEE1942B62200BEABC2 /* InfoPlist.strings in Resources */,
 				C7DA91C11942C98900691B10 /* newsfeeds.json in Resources */,
 				C71D8BF71942B62200BEABC2 /* Main.storyboard in Resources */,
@@ -292,8 +311,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7DA91BC1942BFF100691B10 /* HomeVC.m in Sources */,
+				C7DA91CA1942D44A00691B10 /* CuteWallVC.m in Sources */,
 				C71D8BF41942B62200BEABC2 /* AppDelegate.m in Sources */,
+				C7DA91CD1942D57700691B10 /* CuteCell.m in Sources */,
 				C7DA91BF1942C1CA00691B10 /* NewsFeedCell.m in Sources */,
+				C7DA91D21942D9F600691B10 /* MapsVC.m in Sources */,
 				C71D8BF01942B62200BEABC2 /* main.m in Sources */,
 				C7DA91C41942C9E900691B10 /* Server.m in Sources */,
 			);

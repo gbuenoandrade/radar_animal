@@ -28,4 +28,22 @@
 	return _newsFeeds;
 }
 
+- (NSArray*)cutesArray{
+	if (!_cutesArray) {
+		NSString *cutesJsonPath = [[NSBundle mainBundle] pathForResource:@"cutes" ofType:@"json"];
+		NSData *jsonData = [NSData dataWithContentsOfFile:cutesJsonPath];
+		
+		NSError *error;
+		NSDictionary *cutesDict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+		if (error) {
+			NSLog(@"%@",error);
+			return nil;
+		}
+		else{
+			_cutesArray = [cutesDict objectForKey:@"Cutes"];
+		}
+	}
+	return _cutesArray;
+}
+
 @end

@@ -11,5 +11,6 @@
 @interface Server : NSObject
 
 @property (strong, nonatomic) NSArray *newsFeeds;
+@property (strong, nonatomic) NSArray *cutesArray;
 
 @end
