@@ -34,6 +34,7 @@
 		C7DA91DA1942E7EF00691B10 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DA91D91942E7EF00691B10 /* Annotation.m */; };
 		C7DA91DC1943808400691B10 /* annotations.json in Resources */ = {isa = PBXBuildFile; fileRef = C7DA91DB1943808400691B10 /* annotations.json */; };
 		C7DA91E31943A4AA00691B10 /* MoreInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DA91E21943A4AA00691B10 /* MoreInfoVC.m */; };
+		C7DA91E61943CE8800691B10 /* SplashVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DA91E51943CE8800691B10 /* SplashVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		C7DA91DB1943808400691B10 /* annotations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = annotations.json; sourceTree = "<group>"; };
 		C7DA91E11943A4AA00691B10 /* MoreInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreInfoVC.h; sourceTree = "<group>"; };
 		C7DA91E21943A4AA00691B10 /* MoreInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreInfoVC.m; sourceTree = "<group>"; };
+		C7DA91E41943CE8800691B10 /* SplashVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashVC.h; sourceTree = "<group>"; };
+		C7DA91E51943CE8800691B10 /* SplashVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +230,8 @@
 				C7DA91D11942D9F600691B10 /* MapsVC.m */,
 				C7DA91D31942E25C00691B10 /* InsertionVC.h */,
 				C7DA91D41942E25C00691B10 /* InsertionVC.m */,
+				C7DA91E41943CE8800691B10 /* SplashVC.h */,
+				C7DA91E51943CE8800691B10 /* SplashVC.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7DA91DA1942E7EF00691B10 /* Annotation.m in Sources */,
+				C7DA91E61943CE8800691B10 /* SplashVC.m in Sources */,
 				C7DA91BC1942BFF100691B10 /* HomeVC.m in Sources */,
 				C7DA91CA1942D44A00691B10 /* CuteWallVC.m in Sources */,
 				C7DA91D51942E25C00691B10 /* InsertionVC.m in Sources */,
