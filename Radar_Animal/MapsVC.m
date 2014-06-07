@@ -9,45 +9,59 @@
 #import "MapsVC.h"
 #import <CoreLocation/CoreLocation.h>
 #import "InsertionVC.h"
+#import "Server.h"
+#import "Annotation.h"
+#import "MoreInfoVC.h"
 
 @interface MapsVC () <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic) CLLocationCoordinate2D touchMapCoordinate;
+@property (strong, nonatomic) Annotation *clickedAnnotation;
+
 
 @end
 
 @implementation MapsVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+
+- (void)viewWillAppear:(BOOL)animated{
+	
+	[self fetchAnnotationsFromServer];
 }
 
 
-- (void)viewWillAppear:(BOOL)animated{
-	NSLog(@"EH TOEEES: %d",self.x);
-	
+- (void)fetchAnnotationsFromServer{
+	NSArray *array = [[Server getServer] annotationsArray];
+	for(NSDictionary *dict in array){
+		Annotation *annot = [[Annotation alloc] init];
+		annot.customTitle = dict[@"Title"];
+		annot.status = dict[@"Status"];
+		if(dict[@"Image"]){
+			annot.image = dict[@"Image"];
+		}
+		else
+			annot.imageName = dict[@"ImageName"];
+		annot.coordinate = CLLocationCoordinate2DMake([dict[@"Latitude"] doubleValue], [dict[@"Longitude"] doubleValue]);
+		[self.mapView addAnnotation:annot];
+	}	
 }
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-	if(self.currentAnnotation){
-		[self.mapView addAnnotation:self.currentAnnotation];
-	}
-	
-	
 	UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];
-    lpgr.minimumPressDuration = 0.5; //user needs to press for 2 seconds
+    lpgr.minimumPressDuration =0.7;
     [self.mapView addGestureRecognizer:lpgr];
+	
+	
+	CLLocationCoordinate2D noLocation = CLLocationCoordinate2DMake(-22.818550, -47.075857);
+	MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(noLocation, 2000, 2000);
+	MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
+	[self.mapView setRegion:adjustedRegion animated:YES];
+
 }
 
 - (void)handleLongPress:(UIGestureRecognizer *)gestureRecognizer
@@ -59,7 +73,6 @@
     CGPoint touchPoint = [gestureRecognizer locationInView:self.mapView];
     self.touchMapCoordinate = [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
     
-	
 	[self performSegueWithIdentifier:@"goToInsertionScreen" sender:nil];
 	
 
@@ -68,7 +81,9 @@
 #pragma mark - MapDelegate
 
 
+
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+	
 	
 	
     static NSString *AnnotationViewID = @"annotationViewID";
@@ -80,27 +95,40 @@
         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
     }
 	
-    UIImage *imgPinBorder = [UIImage imageNamed:@"mapicon"];
-    UIImageView *imageViewPinBorder = [[UIImageView alloc] initWithImage:imgPinBorder];
-    imageViewPinBorder.center = annotationView.center;
-    [annotationView addSubview:imageViewPinBorder];
-	
-    UIImage *img = [UIImage imageNamed:@"mapicon"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:img];
-    imageView.center = annotationView.center;
-	
-    annotationView.annotation = annotation;
-	annotationView.canShowCallout = YES;
-    annotationView.draggable = NO;
-	annotationView.rightCalloutAccessoryView = imageView;
+	if(![annotation isKindOfClass:[MKUserLocation class]]){
+		Annotation *annot = (Annotation*)annotation;
+		
+		UIImage *pinImage;
+		if([annot.status isEqualToString:@"Found"])
+			pinImage = [UIImage imageNamed:@"foundpin"];
+		else
+			pinImage = [UIImage imageNamed:@"lostpin"];
+			
+		UIImageView *pinImageView = [[UIImageView alloc] initWithImage:pinImage];
+		pinImageView.center = annotationView.center;
+		[annotationView addSubview:pinImageView];
+		
+		
+		
+		UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+		annotationView.rightCalloutAccessoryView = button;
+		
+		annotationView.annotation = annotation;
+		annotationView.canShowCallout = YES;
+		annotationView.draggable = NO;
+		annotationView.userInteractionEnabled = NO;
+	}
 	
     return annotationView;
 }
 
-- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
-
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
+	
+	self.clickedAnnotation = ((Annotation*)view.annotation);
+	
+	[self performSegueWithIdentifier:@"goToMoreInfo" sender:view.annotation];
+	
 }
-
 
 #pragma mark - Navigation
 
@@ -110,6 +138,17 @@
 		InsertionVC *nextVC = (InsertionVC*)[segue destinationViewController];
 		nextVC.coordinate = self.touchMapCoordinate;
 		nextVC.lastVC = self;
+	}
+	else if([segue.identifier isEqualToString:@"goToMoreInfo"]){
+		MoreInfoVC *nextVC = (MoreInfoVC*)[segue destinationViewController];
+		
+		nextVC.stringTitle = self.clickedAnnotation.customTitle;
+		if(self.clickedAnnotation.image){
+			nextVC.image = self.clickedAnnotation.image;
+		}
+		else
+			nextVC.imageName = self.clickedAnnotation.imageName;
+
 	}
 }
 

@@ -13,5 +13,8 @@
 
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (strong, nonatomic) NSString *customTitle;
+@property (strong, nonatomic) NSString *status;
+@property (strong, nonatomic) NSString *imageName;
+@property (strong, nonatomic) UIImage *image;
 
 @end

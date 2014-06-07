@@ -9,12 +9,14 @@
 #import "InsertionVC.h"
 #import "Annotation.h"
 #import "MapsVC.h"
+#import "Server.h"
 
 @interface InsertionVC () <UITextFieldDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *speciesTextField;
 @property (weak, nonatomic) IBOutlet UITextField *raceTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *statusSegmentedControl;
 
 @property (weak, nonatomic) IBOutlet UILabel *localizationLabel;
 
@@ -58,20 +60,18 @@
 }
 
 - (IBAction)backToMaps:(id)sender {
-		
+
+	Server *server = [Server getServer];
+	
+	NSString *status = self.statusSegmentedControl.selectedSegmentIndex == 0 ? @"Found" : @"Lost";
 	
 	
-	Annotation *annotation = [[Annotation alloc] init];
-	annotation.customTitle = [NSString stringWithFormat:@"%@ %@, %@",self.speciesTextField.text, self.raceTextField.text, self.nameTextField.text];
-	annotation.coordinate = self.coordinate;
-	
-	NSLog(@"TA SETADA A BOMBA");
-	self.lastVC.x = 789;
-	
+	if(self.imageView.image)
+		[server insertAnimalOfSpecies:self.speciesTextField.text race:self.raceTextField.text name:self.nameTextField.text withStatus:status withImage:self.imageView.image andLocation:self.coordinate];
+	else
+		[server insertAnimalOfSpecies:self.speciesTextField.text race:self.raceTextField.text name:self.nameTextField.text withStatus:status withImage:[UIImage imageNamed:@"genericaldog"] andLocation:self.coordinate];
 	
 	[self dismissModalViewControllerAnimated:YES];
-
-	
 }
 
 
@@ -82,7 +82,7 @@
 	self.raceTextField.delegate = self;
 	self.nameTextField.delegate = self;
 	
-	self.localizationLabel.text = [NSString stringWithFormat:@"%.4f, %.4f",self.coordinate.latitude, self.coordinate.longitude];
+	self.localizationLabel.text = [NSString stringWithFormat:@"%.4fº, %.4fº",self.coordinate.latitude, self.coordinate.longitude];
 }
 
 

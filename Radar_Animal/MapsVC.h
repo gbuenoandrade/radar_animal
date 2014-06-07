@@ -9,14 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@class Annotation;
 
 
 @interface MapsVC : UIViewController
 
-@property (strong, nonatomic) id<MKAnnotation> currentAnnotation;
-
-
-@property (nonatomic) NSInteger x;
+@property (strong, nonatomic) NSArray *annotationsArray;
 
 @end
