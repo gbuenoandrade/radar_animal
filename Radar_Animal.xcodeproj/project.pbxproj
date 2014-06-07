@@ -456,6 +456,7 @@
 				C71D8C141942B62200BEABC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C71D8C151942B62200BEABC2 /* Build configuration list for PBXNativeTarget "Radar_AnimalTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +465,7 @@
 				C71D8C171942B62200BEABC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
