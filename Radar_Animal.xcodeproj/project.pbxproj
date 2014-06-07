@@ -14,13 +14,17 @@
 		C71D8BF01942B62200BEABC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C71D8BEF1942B62200BEABC2 /* main.m */; };
 		C71D8BF41942B62200BEABC2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C71D8BF31942B62200BEABC2 /* AppDelegate.m */; };
 		C71D8BF71942B62200BEABC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71D8BF51942B62200BEABC2 /* Main.storyboard */; };
-		C71D8BFA1942B62200BEABC2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C71D8BF91942B62200BEABC2 /* ViewController.m */; };
 		C71D8BFC1942B62200BEABC2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C71D8BFB1942B62200BEABC2 /* Images.xcassets */; };
 		C71D8C031942B62200BEABC2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C71D8C021942B62200BEABC2 /* XCTest.framework */; };
 		C71D8C041942B62200BEABC2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C71D8BE31942B62200BEABC2 /* Foundation.framework */; };
 		C71D8C051942B62200BEABC2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C71D8BE71942B62200BEABC2 /* UIKit.framework */; };
 		C71D8C0D1942B62200BEABC2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C71D8C0B1942B62200BEABC2 /* InfoPlist.strings */; };
 		C71D8C0F1942B62200BEABC2 /* Radar_AnimalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C71D8C0E1942B62200BEABC2 /* Radar_AnimalTests.m */; };
+		C7DA91B91942BF0500691B10 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DA91B81942BF0500691B10 /* MapKit.framework */; };
+		C7DA91BC1942BFF100691B10 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DA91BB1942BFF100691B10 /* HomeVC.m */; };
+		C7DA91BF1942C1CA00691B10 /* NewsFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DA91BE1942C1CA00691B10 /* NewsFeedCell.m */; };
+		C7DA91C11942C98900691B10 /* newsfeeds.json in Resources */ = {isa = PBXBuildFile; fileRef = C7DA91C01942C98900691B10 /* newsfeeds.json */; };
+		C7DA91C41942C9E900691B10 /* Server.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DA91C31942C9E900691B10 /* Server.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +49,20 @@
 		C71D8BF21942B62200BEABC2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C71D8BF31942B62200BEABC2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C71D8BF61942B62200BEABC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C71D8BF81942B62200BEABC2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C71D8BF91942B62200BEABC2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C71D8BFB1942B62200BEABC2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C71D8C011942B62200BEABC2 /* Radar_AnimalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Radar_AnimalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71D8C021942B62200BEABC2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C71D8C0A1942B62200BEABC2 /* Radar_AnimalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Radar_AnimalTests-Info.plist"; sourceTree = "<group>"; };
 		C71D8C0C1942B62200BEABC2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C71D8C0E1942B62200BEABC2 /* Radar_AnimalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Radar_AnimalTests.m; sourceTree = "<group>"; };
+		C7DA91B81942BF0500691B10 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C7DA91BA1942BFF100691B10 /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
+		C7DA91BB1942BFF100691B10 /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
+		C7DA91BD1942C1CA00691B10 /* NewsFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsFeedCell.h; sourceTree = "<group>"; };
+		C7DA91BE1942C1CA00691B10 /* NewsFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsFeedCell.m; sourceTree = "<group>"; };
+		C7DA91C01942C98900691B10 /* newsfeeds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newsfeeds.json; sourceTree = "<group>"; };
+		C7DA91C21942C9E900691B10 /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
+		C7DA91C31942C9E900691B10 /* Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Server.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7DA91B91942BF0500691B10 /* MapKit.framework in Frameworks */,
 				C71D8BE61942B62200BEABC2 /* CoreGraphics.framework in Frameworks */,
 				C71D8BE81942B62200BEABC2 /* UIKit.framework in Frameworks */,
 				C71D8BE41942B62200BEABC2 /* Foundation.framework in Frameworks */,
@@ -101,6 +112,7 @@
 		C71D8BE21942B62200BEABC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7DA91B81942BF0500691B10 /* MapKit.framework */,
 				C71D8BE31942B62200BEABC2 /* Foundation.framework */,
 				C71D8BE51942B62200BEABC2 /* CoreGraphics.framework */,
 				C71D8BE71942B62200BEABC2 /* UIKit.framework */,
@@ -112,11 +124,9 @@
 		C71D8BE91942B62200BEABC2 /* Radar_Animal */ = {
 			isa = PBXGroup;
 			children = (
-				C71D8BF21942B62200BEABC2 /* AppDelegate.h */,
-				C71D8BF31942B62200BEABC2 /* AppDelegate.m */,
-				C71D8BF51942B62200BEABC2 /* Main.storyboard */,
-				C71D8BF81942B62200BEABC2 /* ViewController.h */,
-				C71D8BF91942B62200BEABC2 /* ViewController.m */,
+				C7DA91C61942CA0C00691B10 /* View */,
+				C7DA91C51942C9F900691B10 /* Model */,
+				C7DA91C71942CA1200691B10 /* Controller */,
 				C71D8BFB1942B62200BEABC2 /* Images.xcassets */,
 				C71D8BEA1942B62200BEABC2 /* Supporting Files */,
 			);
@@ -126,6 +136,9 @@
 		C71D8BEA1942B62200BEABC2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C71D8BF21942B62200BEABC2 /* AppDelegate.h */,
+				C71D8BF31942B62200BEABC2 /* AppDelegate.m */,
+				C7DA91C01942C98900691B10 /* newsfeeds.json */,
 				C71D8BEB1942B62200BEABC2 /* Radar_Animal-Info.plist */,
 				C71D8BEC1942B62200BEABC2 /* InfoPlist.strings */,
 				C71D8BEF1942B62200BEABC2 /* main.m */,
@@ -150,6 +163,34 @@
 				C71D8C0B1942B62200BEABC2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C7DA91C51942C9F900691B10 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C7DA91C21942C9E900691B10 /* Server.h */,
+				C7DA91C31942C9E900691B10 /* Server.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C7DA91C61942CA0C00691B10 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C71D8BF51942B62200BEABC2 /* Main.storyboard */,
+				C7DA91BD1942C1CA00691B10 /* NewsFeedCell.h */,
+				C7DA91BE1942C1CA00691B10 /* NewsFeedCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C7DA91C71942CA1200691B10 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C7DA91BA1942BFF100691B10 /* HomeVC.h */,
+				C7DA91BB1942BFF100691B10 /* HomeVC.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +271,7 @@
 			files = (
 				C71D8BFC1942B62200BEABC2 /* Images.xcassets in Resources */,
 				C71D8BEE1942B62200BEABC2 /* InfoPlist.strings in Resources */,
+				C7DA91C11942C98900691B10 /* newsfeeds.json in Resources */,
 				C71D8BF71942B62200BEABC2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,9 +291,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C71D8BFA1942B62200BEABC2 /* ViewController.m in Sources */,
+				C7DA91BC1942BFF100691B10 /* HomeVC.m in Sources */,
 				C71D8BF41942B62200BEABC2 /* AppDelegate.m in Sources */,
+				C7DA91BF1942C1CA00691B10 /* NewsFeedCell.m in Sources */,
 				C71D8BF01942B62200BEABC2 /* main.m in Sources */,
+				C7DA91C41942C9E900691B10 /* Server.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

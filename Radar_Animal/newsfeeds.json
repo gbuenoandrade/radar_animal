@@ -1,0 +1,22 @@
+{
+  "NewsFeeds": [
+    {
+      "Title": "Gato Persa, Laika",
+      "Text": "Fugiu de residência localizada na Av. Romeu Tórtima em 05/06/2014",
+      "ImageName": "persian",
+      "Status": "Lost"
+    },
+    {
+      "Title": "Cachorro Pitbull, Fofo",
+      "Text": "João Guilherme encontrou o pitbull do Kléber Pereira!",
+      "ImageName": "pitbull",
+      "Status": "Found"
+    },
+	{
+	  "Title": "Cachorro Labrador, Jason",
+	  "Text": "Flávio encontrou o labrador da Mitsy!",
+	  "ImageName": "labrador",
+	  "Status": "Found"
+	}
+  ]
+}
