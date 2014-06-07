@@ -28,6 +28,13 @@
     return self;
 }
 
+
+- (void)viewWillAppear:(BOOL)animated{
+	NSLog(@"EH TOEEES: %d",self.x);
+	
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -60,24 +67,38 @@
 
 #pragma mark - MapDelegate
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
 	
-    static NSString *identifier = @"annotation";
-    MKPinAnnotationView *annotationview = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-    
-    if (!annotationview) {
-        annotationview = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-        annotationview.pinColor = MKPinAnnotationColorPurple;
-        annotationview.canShowCallout = YES;
+	
+    static NSString *AnnotationViewID = @"annotationViewID";
+	
+    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
+	
+    if (annotationView == nil)
+    {
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
     }
-    
-    annotationview.annotation = annotation;
 	
-    return annotationview;
+    UIImage *imgPinBorder = [UIImage imageNamed:@"mapicon"];
+    UIImageView *imageViewPinBorder = [[UIImageView alloc] initWithImage:imgPinBorder];
+    imageViewPinBorder.center = annotationView.center;
+    [annotationView addSubview:imageViewPinBorder];
+	
+    UIImage *img = [UIImage imageNamed:@"mapicon"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:img];
+    imageView.center = annotationView.center;
+	
+    annotationView.annotation = annotation;
+	annotationView.canShowCallout = YES;
+    annotationView.draggable = NO;
+	annotationView.rightCalloutAccessoryView = imageView;
+	
+    return annotationView;
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
-    
+
 }
 
 
@@ -88,6 +109,7 @@
 	if([segue.identifier isEqualToString:@"goToInsertionScreen"]){
 		InsertionVC *nextVC = (InsertionVC*)[segue destinationViewController];
 		nextVC.coordinate = self.touchMapCoordinate;
+		nextVC.lastVC = self;
 	}
 }
 

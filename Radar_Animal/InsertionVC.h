@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "MapsVC.h"
 
 @interface InsertionVC : UIViewController
 
 @property (nonatomic) CLLocationCoordinate2D coordinate;
+@property (strong, nonatomic) MapsVC *lastVC;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end

@@ -10,7 +10,7 @@
 #import "Annotation.h"
 #import "MapsVC.h"
 
-@interface InsertionVC () <UITextFieldDelegate>
+@interface InsertionVC () <UITextFieldDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *speciesTextField;
 @property (weak, nonatomic) IBOutlet UITextField *raceTextField;
@@ -22,6 +22,34 @@
 
 @implementation InsertionVC
 
+- (IBAction)selectPhoto:(id)sender {
+	UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+- (IBAction)takePhoto:(UIButton *)sender {
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+    
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    self.imageView.image = chosenImage;
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -29,6 +57,22 @@
     return YES;
 }
 
+- (IBAction)backToMaps:(id)sender {
+		
+	
+	
+	Annotation *annotation = [[Annotation alloc] init];
+	annotation.customTitle = [NSString stringWithFormat:@"%@ %@, %@",self.speciesTextField.text, self.raceTextField.text, self.nameTextField.text];
+	annotation.coordinate = self.coordinate;
+	
+	NSLog(@"TA SETADA A BOMBA");
+	self.lastVC.x = 789;
+	
+	
+	[self dismissModalViewControllerAnimated:YES];
+
+	
+}
 
 
 - (void)viewDidLoad
@@ -41,18 +85,6 @@
 	self.localizationLabel.text = [NSString stringWithFormat:@"%.4f, %.4f",self.coordinate.latitude, self.coordinate.longitude];
 }
 
-#pragma mark - Navigation
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-	if([segue.identifier isEqualToString:@"backToMaps"]){
-		Annotation *annotation = [[Annotation alloc] init];
-		annotation.customTitle = [NSString stringWithFormat:@"%@ %@, %@",self.speciesTextField.text, self.raceTextField.text, self.nameTextField.text];
-		annotation.coordinate = self.coordinate;
-		
-		MapsVC *nextVC = (MapsVC*)[segue destinationViewController];
-		nextVC.currentAnnotation = annotation;
-	}
-}
 
 
 @end

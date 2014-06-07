@@ -16,4 +16,7 @@
 
 @property (strong, nonatomic) id<MKAnnotation> currentAnnotation;
 
+
+@property (nonatomic) NSInteger x;
+
 @end
