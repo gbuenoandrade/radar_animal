@@ -1,5 +1,5 @@
 //
-//  MapsVC.h
+//  InsertionVC.h
 //  Radar_Animal
 //
 //  Created by Guilherme Andrade on 6/7/14.
@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@class Annotation;
+@interface InsertionVC : UIViewController
 
+@property (nonatomic) CLLocationCoordinate2D coordinate;
 
-@interface MapsVC : UIViewController
-
-@property (strong, nonatomic) id<MKAnnotation> currentAnnotation;
 
 @end

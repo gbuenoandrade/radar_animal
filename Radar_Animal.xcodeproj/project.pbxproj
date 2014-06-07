@@ -29,6 +29,9 @@
 		C7DA91CD1942D57700691B10 /* CuteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DA91CC1942D57700691B10 /* CuteCell.m */; };
 		C7DA91CF1942D86400691B10 /* cutes.json in Resources */ = {isa = PBXBuildFile; fileRef = C7DA91CE1942D86400691B10 /* cutes.json */; };
 		C7DA91D21942D9F600691B10 /* MapsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DA91D11942D9F600691B10 /* MapsVC.m */; };
+		C7DA91D51942E25C00691B10 /* InsertionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DA91D41942E25C00691B10 /* InsertionVC.m */; };
+		C7DA91D71942E49200691B10 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7DA91D61942E49200691B10 /* CoreLocation.framework */; };
+		C7DA91DA1942E7EF00691B10 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DA91D91942E7EF00691B10 /* Annotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,11 @@
 		C7DA91CE1942D86400691B10 /* cutes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cutes.json; sourceTree = "<group>"; };
 		C7DA91D01942D9F600691B10 /* MapsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapsVC.h; sourceTree = "<group>"; };
 		C7DA91D11942D9F600691B10 /* MapsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapsVC.m; sourceTree = "<group>"; };
+		C7DA91D31942E25C00691B10 /* InsertionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsertionVC.h; sourceTree = "<group>"; };
+		C7DA91D41942E25C00691B10 /* InsertionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsertionVC.m; sourceTree = "<group>"; };
+		C7DA91D61942E49200691B10 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C7DA91D81942E7EF00691B10 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
+		C7DA91D91942E7EF00691B10 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7DA91D71942E49200691B10 /* CoreLocation.framework in Frameworks */,
 				C7DA91B91942BF0500691B10 /* MapKit.framework in Frameworks */,
 				C71D8BE61942B62200BEABC2 /* CoreGraphics.framework in Frameworks */,
 				C71D8BE81942B62200BEABC2 /* UIKit.framework in Frameworks */,
@@ -123,6 +132,7 @@
 		C71D8BE21942B62200BEABC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7DA91D61942E49200691B10 /* CoreLocation.framework */,
 				C7DA91B81942BF0500691B10 /* MapKit.framework */,
 				C71D8BE31942B62200BEABC2 /* Foundation.framework */,
 				C71D8BE51942B62200BEABC2 /* CoreGraphics.framework */,
@@ -182,6 +192,8 @@
 			children = (
 				C7DA91C21942C9E900691B10 /* Server.h */,
 				C7DA91C31942C9E900691B10 /* Server.m */,
+				C7DA91D81942E7EF00691B10 /* Annotation.h */,
+				C7DA91D91942E7EF00691B10 /* Annotation.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -207,6 +219,8 @@
 				C7DA91C91942D44A00691B10 /* CuteWallVC.m */,
 				C7DA91D01942D9F600691B10 /* MapsVC.h */,
 				C7DA91D11942D9F600691B10 /* MapsVC.m */,
+				C7DA91D31942E25C00691B10 /* InsertionVC.h */,
+				C7DA91D41942E25C00691B10 /* InsertionVC.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -310,8 +324,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7DA91DA1942E7EF00691B10 /* Annotation.m in Sources */,
 				C7DA91BC1942BFF100691B10 /* HomeVC.m in Sources */,
 				C7DA91CA1942D44A00691B10 /* CuteWallVC.m in Sources */,
+				C7DA91D51942E25C00691B10 /* InsertionVC.m in Sources */,
 				C71D8BF41942B62200BEABC2 /* AppDelegate.m in Sources */,
 				C7DA91CD1942D57700691B10 /* CuteCell.m in Sources */,
 				C7DA91BF1942C1CA00691B10 /* NewsFeedCell.m in Sources */,

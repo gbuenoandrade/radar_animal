@@ -7,9 +7,13 @@
 //
 
 #import "MapsVC.h"
-#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import "InsertionVC.h"
 
-@interface MapsVC ()
+@interface MapsVC () <MKMapViewDelegate>
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic) CLLocationCoordinate2D touchMapCoordinate;
 
 @end
 
@@ -27,24 +31,65 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+	
+	if(self.currentAnnotation){
+		[self.mapView addAnnotation:self.currentAnnotation];
+	}
+	
+	
+	UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
+                                          initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = 0.5; //user needs to press for 2 seconds
+    [self.mapView addGestureRecognizer:lpgr];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)handleLongPress:(UIGestureRecognizer *)gestureRecognizer
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+	
+    if (gestureRecognizer.state != UIGestureRecognizerStateBegan)
+        return;
+    
+    CGPoint touchPoint = [gestureRecognizer locationInView:self.mapView];
+    self.touchMapCoordinate = [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
+    
+	
+	[self performSegueWithIdentifier:@"goToInsertionScreen" sender:nil];
+	
+
 }
 
-/*
+#pragma mark - MapDelegate
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+	
+    static NSString *identifier = @"annotation";
+    MKPinAnnotationView *annotationview = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    
+    if (!annotationview) {
+        annotationview = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+        annotationview.pinColor = MKPinAnnotationColorPurple;
+        annotationview.canShowCallout = YES;
+    }
+    
+    annotationview.annotation = annotation;
+	
+    return annotationview;
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
+    
+}
+
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+	if([segue.identifier isEqualToString:@"goToInsertionScreen"]){
+		InsertionVC *nextVC = (InsertionVC*)[segue destinationViewController];
+		nextVC.coordinate = self.touchMapCoordinate;
+	}
 }
-*/
+
 
 @end
