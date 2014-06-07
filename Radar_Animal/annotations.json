@@ -6,6 +6,24 @@
       "Status": "Lost",
       "Latitude": -22.829298,
       "Longitude": -47.074813,
+      
+      "Title": "Cadelinha encontrada",
+	  "ImageName": "foundDog",
+      "Status": "Found",
+      "Latitude": -22.817925,
+      "Longitude": -47.076889,
+      
+      "Title": "Cachorro encontrado",
+	  "ImageName": "foundDog2",
+      "Status": "Found",
+      "Latitude": -22.810212,
+      "Longitude": -47.076803,
+      
+      "Title": "Arara, Nina",
+	  "ImageName": "arara",
+      "Status": "Lost",
+      "Latitude": -22.823028,
+      "Longitude": -47.072082,
     }
   ]
 }
