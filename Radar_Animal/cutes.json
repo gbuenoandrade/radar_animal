@@ -4,13 +4,45 @@
       "ImageName": "xicara",
       "Title": "Meu gatinho na xícara!",
     },
-	{
-	 "ImageName": "xicara",
-	 "Title": "Meu gatinho na xícara!",
-	},
-	{
-      "ImageName": "sleepy",
-      "Title": "Ai, que preguiça!",
-	}
+    
+    {
+      "ImageName": "cuteCats",
+      "Title": "Gatinhos danados!",
+    },
+    
+    {
+      "ImageName": "cuteDog",
+      "Title": "Ownn! Ele é muito fofo, né?!",
+    },
+    
+    {
+      "ImageName": "cuteDog2",
+      "Title": "Coisa mais fofa da mãe!",
+    },
+    
+    {
+      "ImageName": "cuteElephant",
+      "Title": "Não dá vontade de apertar?",
+    },
+    
+    {
+      "ImageName": "cuteHamster",
+      "Title": "Hamtaro adora mexer nas minhas coisas!",
+    },
+    
+    {
+      "ImageName": "cutePets",
+      "Title": "Pra mostrar que amizade não tem raça!",
+    },
+    
+    {
+      "ImageName": "cuteRabbit",
+      "Title": "Laika, Mitsy e Marcão brincando no banheiro!",
+    },
+    
+    {
+      "ImageName": "cuteTiger",
+      "Title": "Pequeno é tão fofo, espere que continue assim quando crescer",
+    }
   ]
 }
