@@ -46,6 +46,8 @@
 	cell.imageView.image = [UIImage imageNamed:self.cutesItens[indexPath.row][@"ImageName"]];
 	cell.textLabel.text = self.cutesItens[indexPath.row][@"Title"];
 	
+	cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+	cell.textLabel.numberOfLines = 0;
     return cell;
 }
 

@@ -77,6 +77,9 @@
 	[self dismissModalViewControllerAnimated:YES];
 }
 
+- (IBAction)backWithoutInsertion:(id)sender {
+	[self dismissModalViewControllerAnimated:YES];
+}
 
 - (void)viewDidLoad
 {
@@ -87,6 +90,14 @@
 	self.detailsTextField.delegate = self;
 	
 	self.localizationLabel.text = [NSString stringWithFormat:@"%.2fº, %.2fº",self.coordinate.latitude, self.coordinate.longitude];
+	
+	UIFont *font=[UIFont fontWithName:@"AmericanTypewriter" size:16.0f];
+    
+    NSDictionary *attributes = [NSDictionary dictionaryWithObject:font
+                                                           forKey:NSFontAttributeName];
+    [self.statusSegmentedControl setTitleTextAttributes:attributes
+										 forState:UIControlStateNormal];
+	
 }
 
 

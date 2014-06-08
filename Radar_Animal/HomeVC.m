@@ -63,28 +63,30 @@
 
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+	NSInteger position = self.newsFeeds.count - indexPath.row - 1;
+	
 	
 	NewsFeedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"feedCell"];
 	
-	cell.titleLabel.text = self.newsFeeds[indexPath.row][@"Title"];
-	cell.textView.text = self.newsFeeds[indexPath.row][@"Text"];
-	
+	cell.titleLabel.text = self.newsFeeds[position][@"Title"];
+	cell.titleLabel.font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:15];
+	cell.textView.text = self.newsFeeds[position][@"Text"];
+	cell.textView.font = [UIFont fontWithName:@"AmericanTypewriter" size:15];
 	
 	
 	UIImage *image;
 	
-	if(self.newsFeeds[indexPath.row][@"Image"])
-		image = self.newsFeeds[indexPath.row][@"Image"];
+	if(self.newsFeeds[position][@"Image"])
+		image = self.newsFeeds[position][@"Image"];
 	else
-		image = [UIImage imageNamed:self.newsFeeds[indexPath.row][@"ImageName"]];
+		image = [UIImage imageNamed:self.newsFeeds[position][@"ImageName"]];
 	
+	cell.imageView.image = [self image:image scaledToSize:CGSizeMake(95, 95)];
 	
-	cell.imageView.image = [self image:image scaledToSize:CGSizeMake(100, 100)];
-	
-	if( [self.newsFeeds[indexPath.row][@"Status"] isEqualToString:@"Lost"] )
-		cell.backgroundColor = [UIColor redColor];
-	else if( [self.newsFeeds[indexPath.row][@"Status"] isEqualToString:@"Found"] )
-		cell.backgroundColor = [UIColor greenColor];
+	if( [self.newsFeeds[position][@"Status"] isEqualToString:@"Lost"] )
+		cell.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.35];
+	else if( [self.newsFeeds[position][@"Status"] isEqualToString:@"Found"] )
+		cell.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:0.35];
 	
 	return cell;
 }

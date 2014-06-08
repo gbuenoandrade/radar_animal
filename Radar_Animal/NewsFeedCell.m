@@ -31,4 +31,10 @@
     // Configure the view for the selected state
 }
 
+- (void)drawRect:(CGRect)rect{
+	self.layer.masksToBounds = YES;
+	self.layer.cornerRadius = 25;
+	
+}
+
 @end
