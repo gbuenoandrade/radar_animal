@@ -16,6 +16,6 @@
 @property (strong, nonatomic) NSMutableArray *annotationsArray;
 
 + (instancetype)getServer;
-- (void)insertAnimalOfSpecies:(NSString*)species race:(NSString*)race name:(NSString*)name withStatus:(NSString*)status withImage:(UIImage*)image andLocation:(CLLocationCoordinate2D)coordinate;
+- (void)insertAnimalOfSpecies:(NSString*)species race:(NSString*)race name:(NSString*)name text:(NSString*)text withStatus:(NSString*)status withImage:(UIImage*)image andLocation:(CLLocationCoordinate2D)coordinate;
 
 @end

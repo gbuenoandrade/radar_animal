@@ -43,6 +43,7 @@
 		else
 			annot.imageName = dict[@"ImageName"];
 		annot.coordinate = CLLocationCoordinate2DMake([dict[@"Latitude"] doubleValue], [dict[@"Longitude"] doubleValue]);
+		annot.text = dict[@"Text"];
 		[self.mapView addAnnotation:annot];
 	}	
 }
@@ -143,6 +144,7 @@
 		MoreInfoVC *nextVC = (MoreInfoVC*)[segue destinationViewController];
 		
 		nextVC.stringTitle = self.clickedAnnotation.customTitle;
+		nextVC.text = self.clickedAnnotation.text;
 		if(self.clickedAnnotation.image){
 			nextVC.image = self.clickedAnnotation.image;
 		}

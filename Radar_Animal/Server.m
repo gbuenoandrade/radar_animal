@@ -21,17 +21,18 @@
 }
 
 
-- (void)insertAnimalOfSpecies:(NSString*)species race:(NSString*)race name:(NSString*)name withStatus:(NSString*)status withImage:(UIImage*)image andLocation:(CLLocationCoordinate2D)coordinate{
+- (void)insertAnimalOfSpecies:(NSString*)species race:(NSString*)race name:(NSString*)name text:(NSString*)text withStatus:(NSString*)status withImage:(UIImage*)image andLocation:(CLLocationCoordinate2D)coordinate{
 	
 	NSMutableDictionary *feedDict = [NSMutableDictionary dictionary];
 	feedDict[@"Title"] = [NSString stringWithFormat:@"%@ %@, %@",species,race,name];
 	feedDict[@"Image"] = image;
-	feedDict[@"Text"] = @""; //TODO
+	feedDict[@"Text"] = text;
 	feedDict[@"Status"] = status;
 	[self.newsFeedsArray addObject:[NSDictionary dictionaryWithDictionary:feedDict]];
 	
 	NSMutableDictionary *annotDict = [NSMutableDictionary dictionary];
 	annotDict[@"Title"] = [NSString stringWithFormat:@"%@ %@, %@",species,race,name];
+	annotDict[@"Text"] = text;
 	annotDict[@"Status"] = status;
 	annotDict[@"Image"] = image;
 	annotDict[@"Latitude"] = [NSNumber numberWithDouble:coordinate.latitude];

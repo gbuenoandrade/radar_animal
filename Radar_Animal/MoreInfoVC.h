@@ -17,4 +17,8 @@
 @property (strong, nonatomic) NSString *imageName;
 @property (strong, nonatomic) UIImage *image;
 
+@property (strong, nonatomic) NSString *text;
+
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+
 @end

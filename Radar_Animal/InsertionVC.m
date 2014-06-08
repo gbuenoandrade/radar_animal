@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *statusSegmentedControl;
 
+@property (weak, nonatomic) IBOutlet UITextField *detailsTextField;
+
 @property (weak, nonatomic) IBOutlet UILabel *localizationLabel;
 
 @end
@@ -67,9 +69,9 @@
 	
 	
 	if(self.imageView.image)
-		[server insertAnimalOfSpecies:self.speciesTextField.text race:self.raceTextField.text name:self.nameTextField.text withStatus:status withImage:self.imageView.image andLocation:self.coordinate];
+	[server insertAnimalOfSpecies:self.speciesTextField.text race:self.raceTextField.text name:self.nameTextField.text text:self.detailsTextField.text withStatus:status withImage:self.imageView.image andLocation:self.coordinate];
 	else
-		[server insertAnimalOfSpecies:self.speciesTextField.text race:self.raceTextField.text name:self.nameTextField.text withStatus:status withImage:[UIImage imageNamed:@"genericaldog"] andLocation:self.coordinate];
+	[server insertAnimalOfSpecies:self.speciesTextField.text race:self.raceTextField.text name:self.nameTextField.text text:self.detailsTextField.text withStatus:status withImage:[UIImage imageNamed:@"genericaldog"] andLocation:self.coordinate];
 	
 	[self dismissModalViewControllerAnimated:YES];
 }
@@ -81,6 +83,7 @@
 	self.speciesTextField.delegate = self;
 	self.raceTextField.delegate = self;
 	self.nameTextField.delegate = self;
+	self.detailsTextField.delegate = self;
 	
 	self.localizationLabel.text = [NSString stringWithFormat:@"%.4fº, %.4fº",self.coordinate.latitude, self.coordinate.longitude];
 }

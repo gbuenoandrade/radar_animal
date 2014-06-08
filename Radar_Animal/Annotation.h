@@ -16,5 +16,6 @@
 @property (strong, nonatomic) NSString *status;
 @property (strong, nonatomic) NSString *imageName;
 @property (strong, nonatomic) UIImage *image;
+@property (strong, nonatomic) NSString *text;
 
 @end

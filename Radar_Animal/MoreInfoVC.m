@@ -20,6 +20,7 @@
 {
     [super viewDidLoad];
     self.titleLabel.text = self.stringTitle;
+	self.textView.text = self.text;
 	if(self.image){
 		self.imageView.image = self.image;
 	}
