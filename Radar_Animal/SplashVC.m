@@ -29,7 +29,7 @@
     [super viewDidLoad];
 	
 	
-	[UIView animateWithDuration:2 animations:^{
+	[UIView animateWithDuration:2.5f animations:^{
 		self.imageView.alpha = 0;
 		
 	} completion:^(BOOL finished) {

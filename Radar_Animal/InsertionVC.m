@@ -20,6 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *detailsTextField;
 
+
 @property (weak, nonatomic) IBOutlet UILabel *localizationLabel;
 
 @end
@@ -71,7 +72,7 @@
 	if(self.imageView.image)
 	[server insertAnimalOfSpecies:self.speciesTextField.text race:self.raceTextField.text name:self.nameTextField.text text:self.detailsTextField.text withStatus:status withImage:self.imageView.image andLocation:self.coordinate];
 	else
-	[server insertAnimalOfSpecies:self.speciesTextField.text race:self.raceTextField.text name:self.nameTextField.text text:self.detailsTextField.text withStatus:status withImage:[UIImage imageNamed:@"genericaldog"] andLocation:self.coordinate];
+	[server insertAnimalOfSpecies:self.speciesTextField.text race:self.raceTextField.text name:self.nameTextField.text text:self.detailsTextField.text withStatus:status withImage:[UIImage imageNamed:@"no_image"] andLocation:self.coordinate];
 	
 	[self dismissModalViewControllerAnimated:YES];
 }
@@ -85,7 +86,7 @@
 	self.nameTextField.delegate = self;
 	self.detailsTextField.delegate = self;
 	
-	self.localizationLabel.text = [NSString stringWithFormat:@"%.4fº, %.4fº",self.coordinate.latitude, self.coordinate.longitude];
+	self.localizationLabel.text = [NSString stringWithFormat:@"%.2fº, %.2fº",self.coordinate.latitude, self.coordinate.longitude];
 }
 
 

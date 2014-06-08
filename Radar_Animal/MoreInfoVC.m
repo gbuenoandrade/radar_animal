@@ -20,7 +20,10 @@
 {
     [super viewDidLoad];
     self.titleLabel.text = self.stringTitle;
+	self.titleLabel.font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:15];
 	self.textView.text = self.text;
+	self.textView.font = [UIFont fontWithName:@"AmericanTypewriter" size:15];
+	
 	if(self.image){
 		self.imageView.image = self.image;
 	}
